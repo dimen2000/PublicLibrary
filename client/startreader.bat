@@ -1,0 +1,1 @@
+appclient -classpath ./target/classes ws.client.Reader

@@ -1,0 +1,37 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>javacource</groupId>
+    <artifactId>publiclibraryclient</artifactId>
+    <version>1</version>
+
+    <build> 
+        <sourceDirectory>src</sourceDirectory> 
+        <plugins>           
+            <plugin> 
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>jaxws-maven-plugin</artifactId>
+                <version>1.12</version>
+                <executions> 
+                    <execution> 
+                        <id>wsimport-from-jdk</id>
+                        <goals>
+                            <goal>wsimport</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <wsdlUrls>
+                        <wsdlUrl>
+                            http://localhost:8080/publiclibraryservice/hello?wsdl
+                        </wsdlUrl>
+                    </wsdlUrls>
+                    <keep>true</keep> 
+                    <packageName>ws.service</packageName> 
+                    <sourceDestDir>src/main/java/</sourceDestDir>
+                </configuration>
+            </plugin>
+        </plugins>  
+    </build>
+</project>
