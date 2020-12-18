@@ -23,7 +23,7 @@ public class Reader {
         while(true) {
             System.out.print("take ISBN\n");
             System.out.print("return ISBN\n");
-            System.out.print("print\n");]
+            System.out.print("print\n");
             System.out.print("exit\n");
             String buff = bufferedReader.readLine();
             String[] tokens = buff.split(" ");
